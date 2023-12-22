@@ -1,0 +1,190 @@
+Command line: /usr/lib/spades/bin/spades.py	--phred-offset	33	-1	/home/cids/Genome_Assembly/p2/forward_reads.fastq	-2	/home/cids/Genome_Assembly/p2/reverse_reads.fastq	-o	/home/cids/Genome_Assembly/p2/spades_output	-k	21	
+
+System information:
+  SPAdes version: 3.13.1
+  Python version: 3.10.12
+  OS: Linux-6.2.0-37-generic-x86_64-with-glibc2.35
+
+Output dir: /home/cids/Genome_Assembly/p2/spades_output
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Multi-cell mode (you should set '--sc' flag if input data was obtained with MDA (single-cell) technology or --meta flag if processing metagenomic dataset)
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/home/cids/Genome_Assembly/p2/forward_reads.fastq']
+      right reads: ['/home/cids/Genome_Assembly/p2/reverse_reads.fastq']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset: 33
+  Corrected reads will be compressed
+Assembly parameters:
+  k: [21]
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /home/cids/Genome_Assembly/p2/spades_output/tmp
+  Threads: 16
+  Memory limit (in Gb): 1
+
+
+======= SPAdes pipeline started. Log can be found here: /home/cids/Genome_Assembly/p2/spades_output/spades.log
+
+
+===== Read error correction started. 
+
+
+== Running read error correction tool: /usr/lib/spades/bin/spades-hammer /home/cids/Genome_Assembly/p2/spades_output/corrected/configs/config.info
+
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  75)   Starting BayesHammer, built from N/A, git revision N/A
+  0:00:00.001     4M / 4M    INFO    General                 (main.cpp                  :  76)   Loading config from /home/cids/Genome_Assembly/p2/spades_output/corrected/configs/config.info
+  0:00:00.001     4M / 4M    INFO    General                 (main.cpp                  :  78)   Maximum # of threads to use (adjusted due to OMP capabilities): 1
+  0:00:00.002     4M / 4M    INFO    General                 (memory_limit.cpp          :  49)   Memory limit set to 1 Gb
+  0:00:00.002     4M / 4M    INFO    General                 (hammer_tools.cpp          :  36)   Hamming graph threshold tau=1, k=21, subkmer positions = [ 0 10 ]
+  0:00:00.002     4M / 4M    INFO    General                 (main.cpp                  : 113)   Size of aux. kmer data 24 bytes
+     === ITERATION 0 begins ===
+  0:00:00.002     4M / 4M    INFO   K-mer Index Building     (kmer_index_builder.hpp    : 301)   Building kmer index
+  0:00:00.003     4M / 4M    INFO    General                 (kmer_index_builder.hpp    : 117)   Splitting kmer instances into 16 files using 1 threads. This might take a while.
+  0:00:00.003     4M / 4M    INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 1024
+  0:00:00.003     4M / 4M    INFO    General                 (kmer_splitters.hpp        :  89)   Memory available for splitting buffers: 0.332031 Gb
+  0:00:00.003     4M / 4M    INFO    General                 (kmer_splitters.hpp        :  97)   Using cell size of 2785280
+  0:00:00.003   388M / 412M  INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/cids/Genome_Assembly/p2/forward_reads.fastq
+  0:00:00.006   388M / 412M  INFO   K-mer Splitting          (kmer_data.cpp             :  97)   Processing /home/cids/Genome_Assembly/p2/reverse_reads.fastq
+  0:00:00.009   388M / 412M  INFO   K-mer Splitting          (kmer_data.cpp             : 112)   Total 174 reads processed
+  0:00:00.009     4M / 412M  INFO    General                 (kmer_index_builder.hpp    : 120)   Starting k-mer counting.
+  0:00:00.014     4M / 412M  INFO    General                 (kmer_index_builder.hpp    : 127)   K-mer counting done. There are 18240 kmers in total.
+  0:00:00.014     4M / 412M  INFO    General                 (kmer_index_builder.hpp    : 133)   Merging temporary buckets.
+  0:00:00.015     4M / 412M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 314)   Building perfect hash indices
+  0:00:00.066     4M / 412M  INFO    General                 (kmer_index_builder.hpp    : 150)   Merging final buckets.
+  0:00:00.067     4M / 412M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 336)   Index built. Total 17328 bytes occupied (7.6 bits per kmer).
+  0:00:00.067     4M / 412M  INFO   K-mer Counting           (kmer_data.cpp             : 356)   Arranging kmers in hash map order
+  0:00:00.068     4M / 412M  INFO    General                 (main.cpp                  : 148)   Clustering Hamming graph.
+  0:00:00.105     4M / 412M  INFO    General                 (main.cpp                  : 155)   Extracting clusters
+  0:00:00.107     4M / 412M  INFO    General                 (main.cpp                  : 167)   Clustering done. Total clusters: 18240
+  0:00:00.108     4M / 412M  INFO   K-mer Counting           (kmer_data.cpp             : 376)   Collecting K-mer information, this takes a while.
+  0:00:00.108     4M / 412M  INFO   K-mer Counting           (kmer_data.cpp             : 382)   Processing /home/cids/Genome_Assembly/p2/forward_reads.fastq
+  0:00:00.111     4M / 412M  INFO   K-mer Counting           (kmer_data.cpp             : 382)   Processing /home/cids/Genome_Assembly/p2/reverse_reads.fastq
+  0:00:00.113     4M / 412M  INFO   K-mer Counting           (kmer_data.cpp             : 389)   Collection done, postprocessing.
+  0:00:00.114     4M / 412M  INFO   K-mer Counting           (kmer_data.cpp             : 402)   There are 18240 kmers in total. Among them 0 (0%) are singletons.
+  0:00:00.114     4M / 412M  INFO    General                 (main.cpp                  : 173)   Subclustering Hamming graph
+  0:00:00.116     4M / 412M  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 649)   Subclustering done. Total 0 non-read kmers were generated.
+  0:00:00.116     4M / 412M  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 650)   Subclustering statistics:
+  0:00:00.116     4M / 412M  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 651)     Total singleton hamming clusters: 18240. Among them 18240 (100%) are good
+  0:00:00.116     4M / 412M  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 652)     Total singleton subclusters: 0. Among them 0 (-nan%) are good
+  0:00:00.116     4M / 412M  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 653)     Total non-singleton subcluster centers: 0. Among them 0 (-nan%) are good
+  0:00:00.116     4M / 412M  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 654)     Average size of non-trivial subcluster: -nan kmers
+  0:00:00.116     4M / 412M  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 655)     Average number of sub-clusters per non-singleton cluster: -nan
+  0:00:00.116     4M / 412M  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 656)     Total solid k-mers: 18240
+  0:00:00.116     4M / 412M  INFO   Hamming Subclustering    (kmer_cluster.cpp          : 657)     Substitution probabilities: [4,4]((-nan,-nan,-nan,-nan),(-nan,-nan,-nan,-nan),(-nan,-nan,-nan,-nan),(-nan,-nan,-nan,-nan))
+  0:00:00.117     4M / 412M  INFO    General                 (main.cpp                  : 178)   Finished clustering.
+  0:00:00.117     4M / 412M  INFO    General                 (main.cpp                  : 197)   Starting solid k-mers expansion in 1 threads.
+  0:00:00.118     4M / 412M  INFO    General                 (main.cpp                  : 218)   Solid k-mers iteration 0 produced 0 new k-mers.
+  0:00:00.119     4M / 412M  INFO    General                 (main.cpp                  : 222)   Solid k-mers finalized
+  0:00:00.119     4M / 412M  INFO    General                 (hammer_tools.cpp          : 220)   Starting read correction in 1 threads.
+  0:00:00.119     4M / 412M  INFO    General                 (hammer_tools.cpp          : 233)   Correcting pair of reads: /home/cids/Genome_Assembly/p2/forward_reads.fastq and /home/cids/Genome_Assembly/p2/reverse_reads.fastq
+  0:00:00.134    28M / 412M  INFO    General                 (hammer_tools.cpp          : 168)   Prepared batch 0 of 87 reads.
+  0:00:00.136    28M / 412M  INFO    General                 (hammer_tools.cpp          : 175)   Processed batch 0
+  0:00:00.137    28M / 412M  INFO    General                 (hammer_tools.cpp          : 185)   Written batch 0
+  0:00:00.140     4M / 412M  INFO    General                 (hammer_tools.cpp          : 274)   Correction done. Changed 0 bases in 0 reads.
+  0:00:00.140     4M / 412M  INFO    General                 (hammer_tools.cpp          : 275)   Failed to correct 0 bases out of 21720.
+  0:00:00.140     4M / 412M  INFO    General                 (main.cpp                  : 248)   Too few reads have changed in this iteration. Exiting.
+  0:00:00.140     4M / 412M  INFO    General                 (main.cpp                  : 255)   Saving corrected dataset description to /home/cids/Genome_Assembly/p2/spades_output/corrected/corrected.yaml
+  0:00:00.140     4M / 412M  INFO    General                 (main.cpp                  : 262)   All done. Exiting.
+
+== Compressing corrected reads (with gzip)
+
+== Dataset description file was created: /home/cids/Genome_Assembly/p2/spades_output/corrected/corrected.yaml
+
+
+===== Read error correction finished. 
+
+
+===== Assembling started.
+
+
+== Running assembler: K21
+
+  0:00:00.000     4M / 4M    INFO    General                 (main.cpp                  :  74)   Loaded config from /home/cids/Genome_Assembly/p2/spades_output/K21/configs/config.info
+  0:00:00.001     4M / 4M    INFO    General                 (memory_limit.cpp          :  49)   Memory limit set to 1 Gb
+  0:00:00.001     4M / 4M    INFO    General                 (main.cpp                  :  84)   Starting SPAdes, built from N/A, git revision N/A
+  0:00:00.001     4M / 4M    INFO    General                 (main.cpp                  :  88)   Maximum k-mer length: 128
+  0:00:00.001     4M / 4M    INFO    General                 (main.cpp                  :  89)   Assembling dataset (/home/cids/Genome_Assembly/p2/spades_output/dataset.info) with K=21
+  0:00:00.001     4M / 4M    INFO    General                 (main.cpp                  :  90)   Maximum # of threads to use (adjusted due to OMP capabilities): 1
+  0:00:00.001     4M / 4M    INFO    General                 (launch.hpp                :  52)   SPAdes started
+  0:00:00.002     4M / 4M    INFO    General                 (launch.hpp                :  59)   Starting from stage: construction
+  0:00:00.002     4M / 4M    INFO    General                 (launch.hpp                :  66)   Two-step RR enabled: 0
+  0:00:00.002     4M / 4M    INFO    General                 (launch.hpp                :  77)   Will need read mapping, kmer mapper will be attached
+  0:00:00.002     4M / 4M    INFO   StageManager             (stage.cpp                 : 132)   STAGE == de Bruijn graph construction
+  0:00:00.006     4M / 4M    INFO    General                 (read_converter.hpp        :  77)   Converting reads to binary format for library #0 (takes a while)
+  0:00:00.006     4M / 4M    INFO    General                 (read_converter.hpp        :  78)   Converting paired reads
+  0:00:00.105    68M / 132M  INFO    General                 (binary_converter.hpp      : 117)   87 reads written
+  0:00:00.110     4M / 132M  INFO    General                 (read_converter.hpp        :  87)   Converting single reads
+  0:00:00.392   132M / 260M  INFO    General                 (binary_converter.hpp      : 117)   0 reads written
+  0:00:00.401     4M / 260M  INFO    General                 (read_converter.hpp        :  95)   Converting merged reads
+  0:00:00.572   132M / 260M  INFO    General                 (binary_converter.hpp      : 117)   0 reads written
+  0:00:00.581     4M / 260M  INFO    General                 (construction.cpp          : 111)   Max read length 150
+  0:00:00.581     4M / 260M  INFO    General                 (construction.cpp          : 117)   Average read length 124.828
+  0:00:00.581     4M / 260M  INFO    General                 (stage.cpp                 : 101)   PROCEDURE == k+1-mer counting
+  0:00:00.581     4M / 260M  INFO    General                 (kmer_index_builder.hpp    : 117)   Splitting kmer instances into 1 files using 1 threads. This might take a while.
+  0:00:00.582     4M / 260M  INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 1024
+  0:00:00.582     4M / 260M  INFO    General                 (kmer_splitters.hpp        :  89)   Memory available for splitting buffers: 0.332031 Gb
+  0:00:00.582     4M / 260M  INFO    General                 (kmer_splitters.hpp        :  97)   Using cell size of 44564480
+  0:00:00.585   380M / 756M  INFO    General                 (kmer_splitters.hpp        : 295)   Adding contigs from previous K
+  0:00:00.586     4M / 756M  INFO    General                 (kmer_splitters.hpp        : 308)   Used 348 reads
+  0:00:00.586     4M / 756M  INFO    General                 (kmer_index_builder.hpp    : 120)   Starting k-mer counting.
+  0:00:00.587     4M / 756M  INFO    General                 (kmer_index_builder.hpp    : 127)   K-mer counting done. There are 9033 kmers in total.
+  0:00:00.587     4M / 756M  INFO    General                 (kmer_index_builder.hpp    : 133)   Merging temporary buckets.
+  0:00:00.587     4M / 756M  INFO    General                 (stage.cpp                 : 101)   PROCEDURE == Extension index construction
+  0:00:00.587     4M / 756M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 301)   Building kmer index
+  0:00:00.587     4M / 756M  INFO    General                 (kmer_index_builder.hpp    : 117)   Splitting kmer instances into 16 files using 1 threads. This might take a while.
+  0:00:00.587     4M / 756M  INFO    General                 (file_limit.hpp            :  32)   Open file limit set to 1024
+  0:00:00.588     4M / 756M  INFO    General                 (kmer_splitters.hpp        :  89)   Memory available for splitting buffers: 0.332031 Gb
+  0:00:00.588     4M / 756M  INFO    General                 (kmer_splitters.hpp        :  97)   Using cell size of 2785280
+  0:00:00.591   388M / 756M  INFO    General                 (kmer_splitters.hpp        : 380)   Processed 9033 kmers
+  0:00:00.591   388M / 756M  INFO    General                 (kmer_splitters.hpp        : 385)   Used 9033 kmers.
+  0:00:00.591     4M / 756M  INFO    General                 (kmer_index_builder.hpp    : 120)   Starting k-mer counting.
+  0:00:00.600     4M / 756M  INFO    General                 (kmer_index_builder.hpp    : 127)   K-mer counting done. There are 9120 kmers in total.
+  0:00:00.601     4M / 756M  INFO    General                 (kmer_index_builder.hpp    : 133)   Merging temporary buckets.
+  0:00:00.602     4M / 756M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 314)   Building perfect hash indices
+  0:00:00.658     4M / 756M  INFO    General                 (kmer_index_builder.hpp    : 150)   Merging final buckets.
+  0:00:00.659     4M / 756M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 336)   Index built. Total 13312 bytes occupied (11.6772 bits per kmer).
+  0:00:00.659     4M / 756M  INFO   DeBruijnExtensionIndexBu (kmer_extension_index_build:  99)   Building k-mer extensions from k+1-mers
+  0:00:00.662     4M / 756M  INFO   DeBruijnExtensionIndexBu (kmer_extension_index_build: 103)   Building k-mer extensions from k+1-mers finished.
+  0:00:00.662     4M / 756M  INFO    General                 (stage.cpp                 : 101)   PROCEDURE == Condensing graph
+  0:00:00.662     4M / 756M  INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 355)   Extracting unbranching paths
+  0:00:00.665     4M / 756M  INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 374)   Extracting unbranching paths finished. 87 sequences extracted
+  0:00:00.666     4M / 756M  INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 310)   Collecting perfect loops
+  0:00:00.667     4M / 756M  INFO   UnbranchingPathExtractor (debruijn_graph_constructor: 343)   Collecting perfect loops finished. 0 loops collected
+  0:00:00.667     4M / 756M  INFO    General                 (stage.cpp                 : 101)   PROCEDURE == Filling coverage indices (PHM)
+  0:00:00.667     4M / 756M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 301)   Building kmer index
+  0:00:00.667     4M / 756M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 314)   Building perfect hash indices
+  0:00:00.671     4M / 756M  INFO   K-mer Index Building     (kmer_index_builder.hpp    : 336)   Index built. Total 4744 bytes occupied (4.20148 bits per kmer).
+  0:00:00.671     4M / 756M  INFO    General                 (construction.cpp          : 388)   Collecting k-mer coverage information from reads, this takes a while.
+  0:00:00.672     4M / 756M  INFO    General                 (construction.cpp          : 508)   Filling coverage and flanking coverage from PHM
+  0:00:00.673     4M / 756M  INFO   StageManager             (stage.cpp                 : 132)   STAGE == EC Threshold Finding
+=== Stack Trace ===
+/usr/lib/spades/bin/spades-core(_ZN14coverage_model17KMerCoverageModel3FitEv+0x2d8) [0x55dcee9efd38]
+/usr/lib/spades/bin/spades-core(_ZN14debruijn_graph17GenomicInfoFiller3runERNS_10graph_packINS_13DeBruijnGraphEEEPKc+0x60f) [0x55dcee98a32f]
+/usr/lib/spades/bin/spades-core(_ZN6spades12StageManager3runERN14debruijn_graph10graph_packINS1_13DeBruijnGraphEEEPKc+0x120) [0x55dcee95c770]
+/usr/lib/spades/bin/spades-core(_ZN6spades15assemble_genomeEv+0xc48) [0x55dcee7f4d28]
+/usr/lib/spades/bin/spades-core(main+0x3de) [0x55dcee7ed8be]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90) [0x7f8197a29d90]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80) [0x7f8197a29e40]
+/usr/lib/spades/bin/spades-core(_start+0x25) [0x55dcee7f2375]
+Verification of expression 'cov_.size() > 10' failed in function 'void coverage_model::KMerCoverageModel::Fit()'. In file './assembler/src/common/modules/coverage_model/kmer_coverage_model.cpp' on line 187. Message 'Invalid kmer coverage histogram, make sure that the coverage is indeed uniform'.
+Verification of expression 'cov_.size() > 10' failed in function 'void coverage_model::KMerCoverageModel::Fit()'. In file './assembler/src/common/modules/coverage_model/kmer_coverage_model.cpp' on line 187. Message 'Invalid kmer coverage histogram, make sure that the coverage is indeed uniform'.
+spades-core: ./assembler/src/common/modules/coverage_model/kmer_coverage_model.cpp:187: void coverage_model::KMerCoverageModel::Fit(): Assertion `cov_.size() > 10' failed.
+
+
+== Error ==  system call for: "['/usr/lib/spades/bin/spades-core', '/home/cids/Genome_Assembly/p2/spades_output/K21/configs/config.info']" finished abnormally, err code: -6
+
+In case you have troubles running SPAdes, you can write to spades.support@cab.spbu.ru
+or report an issue on our GitHub repository github.com/ablab/spades
+Please provide us with params.txt and spades.log files from the output directory.

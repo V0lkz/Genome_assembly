@@ -1,0 +1,6 @@
+- "left reads":
+  - "/home/cids/Genome_Assembly/p2/forward_reads.fastq"
+  "orientation": "fr"
+  "right reads":
+  - "/home/cids/Genome_Assembly/p2/reverse_reads.fastq"
+  "type": "paired-end"
